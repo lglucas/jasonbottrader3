@@ -1,25 +1,176 @@
-# Jason Bot Trader
+# 🤖 Jason Bot Trader
 
-Repositório de exemplos e documentação para o desenvolvimento de bots de trading e monitoramento no ecossistema SushiSwap, usando Node.js/TypeScript e melhores práticas de CI/CD no GitHub.
+Bot de trading automatizado para SushiSwap V3, focado em day trading de tokens de alta volatilidade em redes com baixo custo de gas.
 
-## Estrutura
-- `docs/` — Documentação geral e regras de desenvolvimento
-- `examples/` — Exemplos práticos:
-  - `sushiswap-graph-api/` — Next.js consumindo The Graph da SushiSwap
-  - `sushiswap-monitor/` — Coletor/monitoramento de dados on-chain
-  - `sushiswap-sniper/` — Sniper de tokens (exemplo educativo)
-  - `sushiswap-v3-bot-trader/` — Bot trader utilizando SushiSwap V3
+**Versão:** 0.1.0 (Sprint 0.1 - Em Desenvolvimento)
+**Status:** 🔨 Desenvolvimento Ativo
 
-## Desenvolvimento
-- Ambiente: Windows + VSCode
-- CI/CD: GitHub Actions (a ser configurado)
-- Commits: padrão Conventional Commits (ex.: `docs:`, `feat:`, `fix:`, `chore:`)
+---
 
-## Como contribuir
-1. Faça alterações no código ou docs.
-2. Atualize o `CHANGELOG.md` com a versão e mudanças.
-3. Faça commit seguindo Conventional Commits.
-4. Faça push para `main` e abra Pull Requests quando necessário.
+## 🎯 Visão Geral
 
-## Licença
-Uso interno/educacional. Ajuste a licença conforme necessidade.
+Jason Bot Trader é um bot automatizado que opera no SushiSwap V3 com:
+- ✅ **Multi-Estratégia:** Grid Trading + Momentum (seleção dinâmica)
+- ✅ **Gestão de Risco Avançada:** Stop-loss trailing, take-profit em níveis, circuit breaker
+- ✅ **Dashboard Web:** Interface moderna em tempo real
+- ✅ **Backtesting:** Testa estratégias antes de operar
+- ✅ **Multi-Rede:** Arbitrum, Base, Polygon
+- ✅ **Gas Otimizado:** Cancela trades quando gas está alto
+
+---
+
+## 📁 Estrutura do Projeto
+
+```
+jasonbottrader3/
+├── src/                      # Código-fonte principal
+│   ├── core/                # Bot principal, config, eventos
+│   ├── blockchain/          # Provider, wallet, SushiSwap
+│   ├── strategies/          # Grid Trading, Momentum
+│   ├── risk/                # Stop-loss, take-profit, drawdown
+│   ├── data/                # Coleta e persistência
+│   ├── execution/           # Executor de trades
+│   └── reporting/           # Logger e relatórios
+├── dashboard/               # Dashboard web (Next.js) - [Próximos sprints]
+├── scripts/                 # Scripts utilitários (análise semanal)
+├── data/                    # Dados persistidos (gitignored)
+├── docs/                    # Documentação completa
+└── examples/                # Exemplos de bots (legado)
+```
+
+---
+
+## 🚀 Quick Start
+
+### 1. Instalação
+
+```bash
+# Clone o repositório
+git clone https://github.com/lglucas/jasonbottrader3.git
+cd jasonbottrader3
+
+# Instale dependências
+npm install
+
+# Configure variáveis de ambiente
+cp .env.example .env
+# Edite .env com suas credenciais
+```
+
+### 2. Configuração
+
+Edite o arquivo `.env` com suas credenciais:
+
+```env
+# Wallet
+PRIVATE_KEY=your_private_key_here
+WALLET_ADDRESS=your_wallet_address_here
+
+# RPC (Testnet para começar)
+ARBITRUM_TESTNET_RPC_URL=https://arbitrum-sepolia.infura.io/v3/YOUR_KEY
+
+# API Keys
+INFURA_API_KEY=your_infura_key
+
+# Configuração do Bot
+ACTIVE_NETWORK=arbitrum
+NETWORK_MODE=testnet
+INITIAL_CAPITAL=50
+```
+
+### 3. Execução
+
+```bash
+# Iniciar bot em desenvolvimento
+npm run dev
+
+# Iniciar bot em produção
+npm start
+
+# Rodar testes
+npm test
+
+# Análise semanal de tokens
+npm run weekly
+```
+
+---
+
+## 📚 Documentação
+
+- **[Regras de Desenvolvimento](docs/1.%20regras-de-desenvolvimento.md)** - Padrões e práticas
+- **[Projeto e Arquitetura](docs/2.%20projeto-arquitetura.md)** - Documentação completa do sistema
+- **[CHANGELOG](CHANGELOG.md)** - Histórico de versões
+
+---
+
+## 🗓️ Roadmap
+
+| Sprint | Versão | Status | Entregável |
+|--------|--------|--------|------------|
+| 0.1 | 0.1.0 | 🔨 Em Andamento | Fundação + Testnet |
+| 0.2 | 0.2.0 | 📋 Planejado | Estratégias + Risco |
+| 0.3 | 0.3.0 | 📋 Planejado | Backtesting + Análise |
+| 0.4 | 0.4.0 | 📋 Planejado | Dashboard Web |
+| 0.5 | 0.5.0 | 📋 Planejado | Otimização + Mainnet |
+
+**Estimativa:** 12 semanas (~3 meses)
+
+---
+
+## 🛡️ Segurança
+
+- ⚠️ **NUNCA** commite seu `.env` ou chaves privadas
+- 🧪 **SEMPRE** teste em testnet antes de mainnet
+- 💰 **COMECE** com capital pequeno ($30-50)
+- 🛑 **CONFIGURE** o drawdown máximo (-15%)
+
+---
+
+## 🧪 Status de Desenvolvimento
+
+### Sprint 0.1 - Fundação ✅ COMPLETO
+
+- [x] Estrutura de diretórios
+- [x] Sistema de configuração (.env)
+- [x] Logger estruturado (Winston)
+- [x] Bot principal (esqueleto)
+- [x] Sistema de eventos (Event-Driven)
+- [x] Provider blockchain multi-rede
+- [x] Wallet Manager
+- [x] Gas Manager (estimativa dinâmica)
+- [x] Storage JSON (ciclos + market data)
+- [x] Testes unitários (Jest)
+- [x] CI/CD GitHub Actions
+- [ ] Interface SushiSwap (próximo sprint)
+- [ ] Coletor de dados real (próximo sprint)
+
+**Próximo:** Sprint 0.2 - Estratégias e Risco
+
+---
+
+## 🤝 Contribuindo
+
+Este é um projeto pessoal em desenvolvimento ativo. Contribuições são bem-vindas!
+
+1. Fork o projeto
+2. Crie uma branch (`git checkout -b feature/nova-funcionalidade`)
+3. Commit suas mudanças seguindo Conventional Commits
+4. Push para a branch (`git push origin feature/nova-funcionalidade`)
+5. Abra um Pull Request
+
+---
+
+## 📝 Licença
+
+MIT License - Uso educacional e experimental.
+
+---
+
+## ⚠️ Disclaimer
+
+Este bot é fornecido "como está" para fins educacionais. Trading de criptomoedas envolve riscos significativos. Use por sua conta e risco.
+
+---
+
+**Desenvolvido com ❤️ por Lucas Galvão**
