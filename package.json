@@ -1,0 +1,51 @@
+{
+  "name": "jasonbottrader3",
+  "version": "0.1.0",
+  "description": "Bot de trading automatizado para SushiSwap V3 - Day trading de tokens de alta volatilidade",
+  "main": "src/core/bot.js",
+  "scripts": {
+    "start": "node src/core/bot.js",
+    "dev": "node --watch src/core/bot.js",
+    "test": "jest",
+    "test:watch": "jest --watch",
+    "test:coverage": "jest --coverage",
+    "weekly": "node scripts/weekly-analysis.js",
+    "lint": "eslint src/ --fix",
+    "lint:check": "eslint src/",
+    "format": "prettier --write \"src/**/*.js\" \"scripts/**/*.js\"",
+    "format:check": "prettier --check \"src/**/*.js\" \"scripts/**/*.js\""
+  },
+  "keywords": [
+    "trading-bot",
+    "sushiswap",
+    "defi",
+    "crypto",
+    "day-trading",
+    "arbitrum",
+    "base",
+    "polygon"
+  ],
+  "author": "Lucas Galvão",
+  "license": "MIT",
+  "dependencies": {
+    "ethers": "6.7.1",
+    "sushi": "3.0.5",
+    "graphql-request": "6.1.0",
+    "dotenv": "16.3.1",
+    "express": "4.18.2",
+    "socket.io": "4.6.2",
+    "winston": "3.11.0",
+    "technicalindicators": "3.1.0",
+    "axios": "1.5.0",
+    "cors": "2.8.5"
+  },
+  "devDependencies": {
+    "jest": "29.7.0",
+    "eslint": "8.56.0",
+    "prettier": "3.1.1",
+    "supertest": "6.3.3"
+  },
+  "engines": {
+    "node": ">=18.19.0"
+  }
+}

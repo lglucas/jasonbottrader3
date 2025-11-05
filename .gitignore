@@ -20,3 +20,17 @@ Thumbs.db
 
 # Editor/IDE
 .vscode/
+
+# Dados persistidos (não versionar)
+data/cycles/
+data/market/
+data/reports/
+logs/
+
+# Coverage de testes
+coverage/
+.nyc_output/
+
+# Cache
+.eslintcache
+.prettierrc
