@@ -1,0 +1,22 @@
+# Ignore arquivos de dependências e ambientes
+**/node_modules/
+**/dist/
+**/build/
+**/.next/
+
+# Variáveis e segredos
+*.env
+**/.env
+**/.env.*
+
+# Logs e temporários
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+.DS_Store
+Thumbs.db
+
+# Editor/IDE
+.vscode/
