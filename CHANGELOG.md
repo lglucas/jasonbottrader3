@@ -2,6 +2,18 @@
 
 Todas as alterações relevantes neste projeto serão documentadas aqui.
 
+## [0.2.0] - 2025-11-05
+### Added (Sprint 0.2 - Estratégias e Gestão de Risco)
+- ✅ Base Strategy (`src/strategies/base.js`) - Classe abstrata para estratégias
+- ✅ Grid Trading (`src/strategies/grid-trading.js`) - 5 níveis, rebalanceamento automático
+- ✅ Momentum Trading (`src/strategies/momentum.js`) - RSI + volume + price action
+- ✅ Strategy Manager (`src/strategies/manager.js`) - Seleção dinâmica de estratégias
+- ✅ RSI Indicator (`src/indicators/rsi.js`) - Cálculo e interpretação de RSI
+- ✅ EMA Indicator (`src/indicators/ema.js`) - EMA simples e cruzamentos
+- ✅ Position Manager (`src/risk/position-manager.js`) - Gestão de tamanho de posições (max 10%)
+- ✅ Exit Manager (`src/risk/exit-manager.js`) - Stop-loss trailing + Take-profit em níveis
+- ✅ Drawdown Manager (`src/risk/drawdown.js`) - Circuit breaker em 3 níveis (-5%, -10%, -15%)
+
 ## [0.1.0] - 2025-11-05
 ### Added (Sprint 0.1 - Fundação)
 - ✅ Provider blockchain multi-rede (`src/blockchain/provider.js`)
