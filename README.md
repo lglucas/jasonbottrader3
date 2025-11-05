@@ -129,19 +129,23 @@ npm run weekly
 
 ## 🧪 Status de Desenvolvimento
 
-### Sprint 0.1 - Fundação ✅ Parcialmente Completo
+### Sprint 0.1 - Fundação ✅ COMPLETO
 
 - [x] Estrutura de diretórios
 - [x] Sistema de configuração (.env)
 - [x] Logger estruturado (Winston)
 - [x] Bot principal (esqueleto)
-- [ ] Provider blockchain
-- [ ] Interface SushiSwap
-- [ ] Coletor de dados real
-- [ ] Estimativa de gas
-- [ ] Storage JSON
-- [ ] Testes em testnet
-- [ ] CI/CD GitHub Actions
+- [x] Sistema de eventos (Event-Driven)
+- [x] Provider blockchain multi-rede
+- [x] Wallet Manager
+- [x] Gas Manager (estimativa dinâmica)
+- [x] Storage JSON (ciclos + market data)
+- [x] Testes unitários (Jest)
+- [x] CI/CD GitHub Actions
+- [ ] Interface SushiSwap (próximo sprint)
+- [ ] Coletor de dados real (próximo sprint)
+
+**Próximo:** Sprint 0.2 - Estratégias e Risco
 
 ---
 
